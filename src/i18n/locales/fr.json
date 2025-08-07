@@ -1,0 +1,607 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Réalisations",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact",
+    "freeQuote": "Devis gratuit"
+  },
+  "hero": {
+    "badge": "🤖 IA Contenus & Site automatisé",
+    "title": "Votre contenu social propulsé par l’IA.",
+    "titleHighlight": "Votre site, automatisé.",
+    "titleEnd": "Sans friction.",
+    "subtitle": "Générez posts, visuels et vidéos courtes. Planifiez et automatisez vos publications. Alimentez votre site et votre SEO sans effort, avec personnalisation fidèle à votre marque.",
+    "cta": "Devis gratuit en 24h",
+    "watchDemo": "Voir la démo",
+    "stats": {
+      "sites": "sites automatisés",
+      "satisfaction": "clients satisfaits",
+      "traffic": "plus de trafic",
+      "support": "support",
+      "reviews": "avis",
+      "delivery": "jours de livraison"
+    }
+  },
+  "benefits": {
+    "title": "Pourquoi notre approche IA ?",
+    "subtitle": "Générez 5x plus de contenu, maintenez votre brand voice, publiez automatiquement.",
+    "express": {
+      "title": "Cadence X5",
+      "description": "Augmentez la fréquence sans sacrifier la qualité"
+    },
+    "seo": {
+      "title": "SEO Automatisé",
+      "description": "Articles optimisés, maillage interne et métadonnées générés"
+    },
+    "support": {
+      "title": "Personnalisation Marque",
+      "description": "Votre charte appliquée à chaque contenu et visuel"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Des résultats concrets grâce à l’IA + l’expertise humaine",
+    "marie": {
+      "content": "Nous publions 4x plus sur LinkedIn et notre trafic a doublé. La cohérence de marque est impeccable.",
+      "name": "Marie Dubois",
+      "company": "Épicerie Bio Marie",
+      "role": "Fondatrice"
+    },
+    "thomas": {
+      "content": "La planification automatique et les variations par plateforme nous ont fait gagner des heures chaque semaine.",
+      "name": "Thomas Martin",
+      "company": "Conseil & Stratégie",
+      "role": "Consultant"
+    },
+    "sophie": {
+      "content": "Nos Reels générés depuis nos articles performent 2x mieux. Le SEO automatisé est un vrai plus.",
+      "name": "Sophie Laurent",
+      "company": "Studio Yoga Zen",
+      "role": "Professeure de Yoga"
+    },
+    "pierre": {
+      "content": "Un workflow simple de l’idée à la publication. Reporting clair, décisions rapides.",
+      "name": "Pierre Moreau",
+      "company": "Artisan Menuisier",
+      "role": "Artisan"
+    }
+  },
+  "audit": {
+    "title": "Audit IA & Automatisation gratuit",
+    "subtitle": "Évaluez votre potentiel en 2 minutes : contenus, planning, site automatisé",
+    "steps": {
+      "website": {
+        "title": "Votre site actuel",
+        "question": "Quelle est l'adresse de votre site web actuel ?",
+        "placeholder": "www.monsite.com (optionnel)"
+      },
+      "business": {
+        "title": "Votre secteur",
+        "question": "Dans quel secteur d'activité êtes-vous ?",
+        "options": {
+          "ecommerce": "E-commerce",
+          "services": "Services B2B",
+          "restaurant": "Restauration",
+          "health": "Santé & Bien-être",
+          "realestate": "Immobilier",
+          "craft": "Artisanat",
+          "coaching": "Coaching/Formation",
+          "other": "Autre"
+        }
+      },
+      "goals": {
+        "title": "Vos objectifs",
+        "question": "Quels sont vos principaux objectifs ? (plusieurs choix possibles)",
+        "options": {
+          "visibility": "Augmenter ma visibilité",
+          "leads": "Générer plus de leads",
+          "sales": "Vendre en ligne",
+          "image": "Améliorer mon image",
+          "automation": "Automatiser ma communication"
+        }
+      },
+      "budget": {
+        "title": "Votre budget",
+        "question": "Quel est votre budget mensuel pour votre marketing digital ?",
+        "options": {
+          "low": "Moins de 100€/mois",
+          "medium": "100€ - 300€/mois",
+          "high": "300€ - 500€/mois",
+          "premium": "500€ - 1000€/mois",
+          "enterprise": "Plus de 1000€/mois"
+        }
+      }
+    },
+    "continue": "Continuer",
+    "getAudit": "Recevoir mon audit",
+    "thanks": "Merci ! Votre audit personnalisé sera envoyé dans les 24h."
+  },
+  "cta": {
+    "title": "Prêt à publier 5x plus avec l’IA ?",
+    "subtitle": "Personnalisation par marque, planification automatique, site connecté.",
+    "startProject": "Démarrer mon projet",
+    "viewPricing": "Voir les tarifs"
+  },
+  "services": {
+    "title": "Services IA & Automatisation",
+    "subtitle": "Génération multi-formats, personnalisation de marque, planification et intégration à votre site.",
+    "website": {
+      "title": "Site Web Automatisé",
+      "description": "Blog, landing pages et SEO générés. Mise à jour continue, maillage interne, images optimisées.",
+      "features": [
+        "Articles et métadonnées générés",
+        "Sitemap et indexation automatisés",
+        "Modèles de pages réutilisables",
+        "Intégration CMS headless",
+        "Performance et accessibilité"
+      ]
+    },
+    "seo": {
+      "title": "Contenus SEO par IA",
+      "description": "Guides, articles et FAQ générés avec validation humaine et optimisation on-page.",
+      "features": [
+        "Recherche mots-clés",
+        "Briefs d’articles IA",
+        "Rédaction + relecture",
+        "Optimisation H1–H3",
+        "Schémas JSON-LD"
+      ]
+    },
+    "social": {
+      "title": "Automatisation Réseaux Sociaux",
+      "description": "Posts, carrousels et vidéos courtes générés puis planifiés sur chaque plateforme.",
+      "features": [
+        "Variations par plateforme",
+        "Calendrier auto",
+        "Approbations & rôles",
+        "Publication API",
+        "Reporting engagement"
+      ]
+    },
+    "branding": {
+      "title": "Personnalisation par Marque",
+      "description": "Charte graphique appliquée systématiquement aux contenus et aux visuels.",
+      "features": [
+        "Brand kit centralisé",
+        "Prompts guidés par charte",
+        "Templates visuels",
+        "Bibliothèque médias (DAM)",
+        "Contrôle qualité"
+      ]
+    },
+    "support": {
+      "title": "Accompagnement Humain",
+      "description": "Stratégie, coaching éditorial et gouvernance de la charte.",
+      "features": [
+        "Consultant dédié",
+        "Ateliers mensuels",
+        "Formation équipes",
+        "Roadmap trimestrielle",
+        "Support réactif"
+      ]
+    },
+    "automation": {
+      "title": "Workflows n8n",
+      "description": "Automatisation de bout en bout : de l’idée à la publication et au reporting.",
+      "features": [
+        "Intégrations IA",
+        "APIs réseaux sociaux",
+        "CMS & DAM",
+        "Alertes & QA",
+        "Rapports automatiques"
+      ]
+    },
+    "learnMore": "En savoir plus",
+    "process": {
+      "title": "Notre méthode",
+      "subtitle": "IA + validation humaine pour des contenus cohérents et performants",
+      "steps": {
+        "audit": {
+          "title": "Brief & audit",
+          "description": "Objectifs, cibles, charte et canaux"
+        },
+        "creation": {
+          "title": "Génération",
+          "description": "Idées, scripts, visuels et posts"
+        },
+        "optimization": {
+          "title": "Planification",
+          "description": "Variations, calendrier et QA"
+        },
+        "followup": {
+          "title": "Mesure",
+          "description": "Reporting, itérations, SEO"
+        }
+      }
+    },
+    "ctaTitle": "Besoin d’un pilote IA pour vos contenus ?",
+    "ctaSubtitle": "Discutons de vos objectifs et mettons en place votre workflow.",
+    "ctaButton": "Demander un devis gratuit"
+  },
+  "portfolio": {
+    "title": "Nos Réalisations IA & Social",
+    "subtitle": "Des contenus générés, planifiés et intégrés au site pour des résultats tangibles.",
+    "categories": {
+      "all": "Tous les projets",
+      "ecommerce": "E-commerce",
+      "services": "Services B2B",
+      "restaurant": "Restauration",
+      "health": "Santé & Bien-être",
+      "craft": "Artisanat"
+    },
+    "noResults": "Aucun projet ne correspond à votre recherche.",
+    "viewSite": "Voir le site",
+    "results": {
+      "traffic": "Trafic",
+      "conversion": "Conversion",
+      "seo": "SEO"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs Transparents",
+    "subtitle": "Choisissez un plan adapté à votre cadence de publication et à votre niveau d’automatisation.",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "-20%",
+    "month": "mois",
+    "year": "an",
+    "savingsText": "Économisez {{amount}}€/mois",
+    "startNow": "Commencer maintenant",
+    "plans": {
+      "solo": {
+        "name": "Solo",
+        "description": "Pour démarrer avec un calendrier éditorial régulier",
+        "features": [
+          "10 posts/mois multi-plateformes",
+          "1 article SEO/mois",
+          "Templates brandés",
+          "Planification automatique",
+          "Reporting mensuel"
+        ],
+        "notIncluded": [
+          "Vidéos courtes avancées",
+          "Automatisations n8n"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Pour accélérer avec IA + automatisations",
+        "popular": "Plus populaire",
+        "features": [
+          "30 posts/mois",
+          "4 articles SEO/mois",
+          "Vidéos courtes (8/mois)",
+          "Automatisation n8n",
+          "Support prioritaire",
+          "A/B tests",
+          "Intégrations API"
+        ],
+        "notIncluded": [
+          "Consultant dédié"
+        ]
+      },
+      "human": {
+        "name": "Humain",
+        "description": "Pilotage éditorial complet + consultant dédié",
+        "features": [
+          "Tout du plan Pro",
+          "Consultant dédié",
+          "Ateliers mensuels",
+          "Roadmap trimestrielle",
+          "Révisions illimitées",
+          "Workflows sur-mesure",
+          "Rapports personnalisés"
+        ]
+      }
+    },
+    "simulator": {
+      "title": "Simulateur de Prix",
+      "subtitle": "Calculez le coût exact selon vos besoins spécifiques",
+      "steps": {
+        "projectType": {
+          "title": "Type de projet",
+          "question": "Quel type de site souhaitez-vous ?",
+          "options": {
+            "vitrine": "Site vitrine",
+            "ecommerce": "E-commerce",
+            "blog": "Blog/Magazine",
+            "plateforme": "Plateforme/SaaS"
+          }
+        },
+        "pages": {
+          "title": "Nombre de pages",
+          "question": "Combien de pages voulez-vous ?",
+          "unit": "pages"
+        },
+        "features": {
+          "title": "Fonctionnalités",
+          "question": "Quelles fonctionnalités souhaitez-vous ?",
+          "options": {
+            "seo": "SEO automatisé",
+            "blog": "Blog intégré",
+            "ecommerce": "Boutique en ligne",
+            "booking": "Système de réservation",
+            "crm": "CRM intégré",
+            "analytics": "Analytics avancés"
+          }
+        },
+        "timeline": {
+          "title": "Délai de livraison",
+          "question": "Dans quel délai souhaitez-vous votre site ?",
+          "options": {
+            "express": "7 jours (Express)",
+            "standard": "15 jours (Standard)",
+            "confort": "30 jours (Confort)"
+          }
+        },
+        "support": {
+          "title": "Support",
+          "question": "Quel niveau de support voulez-vous ?",
+          "options": {
+            "email": "Support par email",
+            "priority": "Support prioritaire",
+            "dedicated": "Consultant dédié"
+          }
+        }
+      },
+      "continue": "Continuer",
+      "getQuote": "Demander un devis",
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "questions": [
+        {
+          "question": "Puis-je changer de plan à tout moment ?",
+          "answer": "Oui, vous pouvez upgrader ou downgrader votre plan à tout moment. Les changements prennent effet immédiatement."
+        },
+        {
+          "question": "Y a-t-il des frais cachés ?",
+          "answer": "Non, nos tarifs sont transparents. Le prix inclut la génération IA, la planification et le support défini par le plan."
+        },
+        {
+          "question": "Le contenu est-il vérifié par un humain ?",
+          "answer": "Oui, chaque contenu passe par une relecture rapide pour garantir la cohérence de votre charte et l’exactitude."
+        },
+        {
+          "question": "Comment est gérée ma charte de marque ?",
+          "answer": "Nous créons un brand kit (typographies, couleurs, ton de voix) appliqué automatiquement à vos contenus."
+        }
+      ]
+    },
+    "ctaTitle": "Prêt à démarrer votre projet ?",
+    "ctaSubtitle": "Choisissez votre plan et publiez plus, mieux, plus vite."
+  },
+  "blog": {
+    "title": "Blog & Ressources IA",
+    "subtitle": "Guides pratiques pour générer, planifier et automatiser vos contenus.",
+    "search": "Rechercher un article...",
+    "categories": {
+      "all": "Tous les articles",
+      "seo": "SEO",
+      "design": "Design Web",
+      "marketing": "Marketing Digital",
+      "ia": "Intelligence Artificielle",
+      "conseils": "Conseils Business"
+    },
+    "featured": "Article à la une",
+    "readArticle": "Lire l'article",
+    "readMore": "Lire la suite",
+    "readTime": "min de lecture",
+    "noResults": "Aucun article ne correspond à votre recherche.",
+    "newsletter": {
+      "title": "Ne ratez aucun conseil",
+      "subtitle": "Recevez nos derniers articles et templates directement dans votre boîte mail.",
+      "placeholder": "Votre adresse email",
+      "subscribe": "S'abonner"
+    }
+  },
+  "about": {
+    "title": "À propos — IA + Humain",
+    "subtitle": "Notre mission : rendre la production de contenus et l’automatisation accessibles, fiables et alignées à votre marque.",
+    "mission": {
+      "title": "Notre Mission",
+      "content": [
+        "Nous combinons IA et expertise humaine pour produire des contenus cohérents et performants.",
+        "Nous automatisons ce qui peut l’être, et gardons l’humain pour le contrôle qualité et la stratégie.",
+        "Votre marque reste au centre : charte, ton de voix, objectifs business."
+      ]
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "subtitle": "Exigence, clarté, résultats",
+      "excellence": {
+        "title": "Excellence",
+        "description": "Qualité éditoriale et technique à chaque étape."
+      },
+      "human": {
+        "title": "Accompagnement Humain",
+        "description": "Écoute, pédagogie et proximité."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Workflows IA robustes, outillage moderne."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "description": "Tarifs clairs, process tracés, reporting lisible."
+      }
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "subtitle": "Des experts contenus, SEO et automatisation"
+    },
+    "technologies": {
+      "title": "Stack & Outils",
+      "subtitle": "IA, CMS headless, n8n, DAM, analytics"
+    },
+    "stats": {
+      "sites": "Sites automatisés",
+      "satisfaction": "Clients satisfaits",
+      "experience": "D'expérience",
+      "delivery": "Livraison moyenne",
+      "since": "Depuis notre création",
+      "rate": "Taux de satisfaction",
+      "aiExperience": "Dans l'IA & automatisation",
+      "speed": "Rapidité garantie"
+    },
+    "ctaTitle": "Envie d’accélérer ?",
+    "ctaSubtitle": "Programmons une session de 30 minutes pour cadrer vos objectifs.",
+    "ctaButton": "Discutons de votre projet",
+    "ctaPricing": "Voir nos tarifs"
+  },
+  "contact": {
+    "title": "Parlons IA & Automatisation",
+    "subtitle": "Obtenez un devis personnalisé en 24h. Démarrez avec un pilotage clair et mesurable.",
+    "info": {
+      "title": "Restons en contact",
+      "description": "Email, téléphone ou rendez-vous : choisissez ce qui vous convient.",
+      "email": {
+        "title": "Email",
+        "content": "contact@webfityou.com",
+        "description": "Réponse sous 24h"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "content": "+33 1 23 45 67 89",
+        "description": "Lun-Ven, 9h-18h"
+      },
+      "address": {
+        "title": "Adresse",
+        "content": "75001 Paris, France",
+        "description": "Sur rendez-vous"
+      },
+      "booking": {
+        "title": "Réservez un appel",
+        "description": "Discutons directement de votre projet lors d'un appel de 30 minutes.",
+        "button": "Choisir un créneau"
+      }
+    },
+    "form": {
+      "title": "Demande de devis",
+      "success": {
+        "title": "Message envoyé !",
+        "description": "Nous vous recontacterons dans les 24h avec votre devis."
+      },
+      "fields": {
+        "name": {
+          "label": "Nom complet",
+          "placeholder": "Jean Dupont",
+          "required": true
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "jean@exemple.com",
+          "required": true
+        },
+        "company": {
+          "label": "Entreprise",
+          "placeholder": "Mon Entreprise SARL"
+        },
+        "phone": {
+          "label": "Téléphone",
+          "placeholder": "+33 1 23 45 67 89"
+        },
+        "service": {
+          "label": "Service souhaité",
+          "placeholder": "Sélectionnez un service",
+          "required": true,
+          "options": {
+            "vitrine": "Génération contenus IA",
+            "ecommerce": "Automatisation réseaux sociaux",
+            "seo": "Site & SEO automatisés",
+            "social": "Vidéos courtes",
+            "branding": "Brand kit & prompts",
+            "complete": "Pack complet",
+            "other": "Autre"
+          }
+        },
+        "budget": {
+          "label": "Budget estimé",
+          "placeholder": "Votre budget",
+          "options": {
+            "low": "Moins de 1000€",
+            "medium": "1000€ - 3000€",
+            "high": "3000€ - 5000€",
+            "premium": "5000€ - 10000€",
+            "enterprise": "Plus de 10000€"
+          }
+        },
+        "timeline": {
+          "label": "Délai souhaité",
+          "placeholder": "Quand ?",
+          "options": {
+            "urgent": "Urgent (7 jours)",
+            "fast": "Rapide (2-3 semaines)",
+            "standard": "Standard (1-2 mois)",
+            "flexible": "Flexible (plus de 2 mois)"
+          }
+        },
+        "message": {
+          "label": "Décrivez votre projet",
+          "placeholder": "Objectifs, plateformes, charte, KPIs…",
+          "required": true
+        }
+      },
+      "submit": "Envoyer ma demande",
+      "guarantee": "Réponse garantie en moins de 24h"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "subtitle": "Les réponses aux questions les plus courantes",
+      "questions": [
+        {
+          "question": "Combien de temps pour être opérationnel ?",
+          "answer": "Sous 7 jours pour la mise en place initiale (workflows, brand kit, calendrier)."
+        },
+        {
+          "question": "Qui valide les contenus ?",
+          "answer": "Vous choisissez: validation par vos équipes ou relecture par notre consultant."
+        },
+        {
+          "question": "Puis-je garder la propriété des prompts et templates ?",
+          "answer": "Oui, tous les prompts, gabarits et assets vous appartiennent."
+        },
+        {
+          "question": "Quels outils utilisez-vous ?",
+          "answer": "n8n, APIs sociales, CMS headless, IA générative, DAM et GA4 selon votre stack."
+        }
+      ]
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "required": "requis",
+    "step": "Étape",
+    "of": "sur"
+  },
+  "footer": {
+    "tagline": "IA Contenus. Site automatisé. Résultats mesurables.",
+    "services": {
+      "title": "Services",
+      "items": [
+        "Génération contenus IA",
+        "Automatisation social",
+        "Site & SEO automatisés",
+        "Brand kit & prompts"
+      ]
+    },
+    "company": {
+      "title": "Entreprise"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "copyright": "© 2025 WebFitYou. Tous droits réservés."
+  }
+}
