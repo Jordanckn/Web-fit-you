@@ -11,18 +11,27 @@ Cas IA
 - Idées: JSON invalide => fallback message
 - Final: succès
 - Timeout / 5xx OpenRouter => message utilisateur avec “Réessayer”
+- Cache 24h: même entrée => mêmes idées renvoyées instantanément
+- Image: génération échouée => fallback stock image
 
 UI/Accessibilité
 - Responsive <375px, 768px, 1024px, 1440px
 - Contraste AA (applitools/axe)
 - Navigation clavier dans le modal (focus trap, aria-modal)
 - Formulaire: erreurs champ par champ (email, consent obligatoire)
+- `prefers-reduced-motion`: animations désactivées
+- i18n: passage FR -> EN conserve l’état
 
 Quotas
 - Générer idées puis final = 1 crédit consommé
 - 3 crédits/ session => blocage UI, message clair
 
+Télémetrie
+- Événements envoyés: sélection plateforme, réussite/échec génération, abandon
+- Aucune donnée perso dans les logs
+
 Critères d’acceptation
 - Flux complet fonctionne (démo)
 - Erreurs FR claires, loaders visibles
 - Aucune clé API exposée côté client
+- Performance: latence idées <2.5s, final <5s
