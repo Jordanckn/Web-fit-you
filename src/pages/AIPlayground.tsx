@@ -1,7 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import {
   Sparkles,
   PenLine,
@@ -47,8 +46,15 @@ const aiDark = "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900";
 
 type Message = { role: 'user' | 'assistant' | 'system'; content: string };
 
+interface Idea {
+  id: string;
+  title: string;
+  angle: string;
+  value: string;
+  cta: string;
+}
+
 const AIPlayground: React.FC = () => {
-  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<TabKey>('linkedin');
   const [lead, setLead] = useState<LeadInfo>(defaultLead);
   const [formStep, setFormStep] = useState<'lead' | 'code' | 'granted'>('lead');
@@ -58,8 +64,8 @@ const AIPlayground: React.FC = () => {
   const [lockedUntil, setLockedUntil] = useState<number | null>(null);
   const [brief, setBrief] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
-  const [ideas, setIdeas] = useState<any[]>([]);
-  const [chosenIdea, setChosenIdea] = useState<any | null>(null);
+  const [ideas, setIdeas] = useState<Idea[]>([]);
+  const [chosenIdea, setChosenIdea] = useState<Idea | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [showChat, setShowChat] = useState(false);
@@ -70,7 +76,7 @@ const AIPlayground: React.FC = () => {
   const cooldownActive = lockedUntil ? Date.now() < lockedUntil : false;
   const cooldownRemaining = cooldownActive ? Math.ceil((lockedUntil! - Date.now()) / 1000) : 0;
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
     if (!lead.consent) {
@@ -84,9 +90,9 @@ const AIPlayground: React.FC = () => {
     setGeneratedOtp(code);
     setFormStep('code');
     console.log('OTP (démo) envoyé à', lead.email, 'code:', code);
-  };
+  }, [lead]);
 
-  const handleVerify = (e: React.FormEvent) => {
+  const handleVerify = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (cooldownActive) {
       setErrorMsg(`Session bloquée. Réessayez dans ${cooldownRemaining}s.`);
@@ -109,22 +115,22 @@ const AIPlayground: React.FC = () => {
         setErrorMsg(`Code incorrect. Il vous reste ${left} essai(s).`);
       }
     }
-  };
+  }, [otp, generatedOtp, cooldownActive, cooldownRemaining, attempts]);
 
-  const openChat = () => {
+  const openChat = useCallback(() => {
     if (formStep !== 'granted') return;
     setShowChat(true);
     setMessages([]);
     setIdeas([]);
     setChosenIdea(null);
-  };
+  }, [formStep]);
 
   // Simulations IA côté client (remplacer par appels proxy serveur)
-  const simulateIdeas = () => {
+  const simulateIdeas = useCallback(() => {
     setLoading(true);
     setErrorMsg('');
     setTimeout(() => {
-      const fake = [
+      const fake: Idea[] = [
         { id: 'a1', title: 'Moderniser votre présence locale', angle: 'Mettre en avant la preuve sociale', value: 'Attirer plus de prospects', cta: 'Découvrir nos offres' },
         { id: 'a2', title: 'Automatiser sans perdre l’authenticité', angle: 'Montrer les bénéfices concrets', value: 'Gagner du temps', cta: 'Prendre rendez-vous' },
         { id: 'a3', title: 'Transformer vos articles en posts performants', angle: 'Cadence X5', value: 'Plus d’engagement', cta: 'Voir des exemples' }
@@ -133,9 +139,9 @@ const AIPlayground: React.FC = () => {
       setMessages([{ role: 'assistant', content: 'Voici 3 idées proposées. Choisissez-en une ou régénérez.' }]);
       setLoading(false);
     }, 900);
-  };
+  }, []);
 
-  const simulateFinal = () => {
+  const simulateFinal = useCallback(() => {
     setLoading(true);
     setErrorMsg('');
     setTimeout(() => {
@@ -144,15 +150,15 @@ const AIPlayground: React.FC = () => {
       setLoading(false);
       setCredits(c => Math.max(0, c - 1));
     }, 900);
-  };
+  }, [activeTab, brief]);
 
-  const copyToClipboard = async () => {
+  const copyToClipboard = useCallback(async () => {
     const txt = messages.map(m => (m.role === 'assistant' ? m.content : '')).join('\n\n').trim();
     if (!txt) return;
     await navigator.clipboard.writeText(txt);
-  };
+  }, [messages]);
 
-  const downloadText = (asMd = false) => {
+  const downloadText = useCallback((asMd = false) => {
     const txt = messages.map(m => `${m.role === 'user' ? 'Utilisateur' : 'IA'}: ${m.content}`).join('\n\n');
     const blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
     const a = document.createElement('a');
@@ -160,13 +166,13 @@ const AIPlayground: React.FC = () => {
     a.download = asMd ? 'contenu.md' : 'contenu.txt';
     a.click();
     URL.revokeObjectURL(a.href);
-  };
+  }, [messages]);
 
-  const mailContent = () => {
+  const mailContent = useCallback(() => {
     const subject = encodeURIComponent('Contenu généré');
     const body = encodeURIComponent(messages.map(m => `${m.role === 'user' ? 'Utilisateur' : 'IA'}: ${m.content}`).join('\n\n'));
     window.location.href = `mailto:${lead.email}?subject=${subject}&body=${body}`;
-  };
+  }, [lead.email, messages]);
 
   return (
     <>
