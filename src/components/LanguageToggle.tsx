@@ -12,7 +12,9 @@ const LanguageToggle: React.FC = () => {
     i18n.changeLanguage(newLang);
     try {
       localStorage.setItem('i18nextLng', newLang);
-    } catch {}
+    } catch (e) {
+      console.error('Lang storage failed', e);
+    }
   };
 
   return (

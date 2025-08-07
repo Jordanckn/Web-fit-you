@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Users, Target, Zap, Heart, Award, Lightbulb } from 'lucide-react';
+import { Target, Zap, Heart, Lightbulb } from 'lucide-react';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
