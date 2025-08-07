@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Check, X, Star, ArrowRight, Calculator } from 'lucide-react';
+import { Check, X, ArrowRight, Calculator } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PricingSimulator from '../components/pricing/PricingSimulator';
 
@@ -224,9 +224,10 @@ const Pricing: React.FC = () => {
           </motion.div>
 
           <div className="space-y-6">
-            {t('pricing.faq.questions', { returnObjects: true }).map((faq: any, index: number) => (
-              <motion.div
-                key={index}
+            {t('pricing.faq.questions', { returnObjects: true }).map(
+              (faq: { question: string; answer: string }, index: number) => (
+                <motion.div
+                  key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Calculator, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface SimulatorData {
   projectType: string;
@@ -116,7 +116,7 @@ const PricingSimulator: React.FC = () => {
     }
   };
 
-  const updateData = (key: keyof SimulatorData, value: any) => {
+  const updateData = <K extends keyof SimulatorData>(key: K, value: SimulatorData[K]) => {
     setData(prev => ({ ...prev, [key]: value }));
   };
 

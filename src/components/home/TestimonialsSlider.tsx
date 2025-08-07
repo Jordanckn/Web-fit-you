@@ -61,13 +61,13 @@ const TestimonialsSlider: React.FC = () => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, testimonials.length]);
 
   const goToPrevious = () => {
     setIsAutoPlaying(false);

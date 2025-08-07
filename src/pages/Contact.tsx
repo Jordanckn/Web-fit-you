@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: t('contact.info.phone.title'),
-      content: "webfityou@gmail.com",
+      content: "+33 1 23 45 67 89",
       description: t('contact.info.phone.description')
     },
     {
@@ -420,23 +420,25 @@ const Contact: React.FC = () => {
           </motion.div>
 
           <div className="space-y-6">
-            {t('contact.faq.questions', { returnObjects: true }).map((faq: any, index: number) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            ))}
+            {t('contact.faq.questions', { returnObjects: true }).map(
+              (faq: { question: string; answer: string }, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-xl p-6 shadow-sm"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-gray-600">
+                    {faq.answer}
+                  </p>
+                </motion.div>
+              )
+            )}
           </div>
         </div>
       </section>
