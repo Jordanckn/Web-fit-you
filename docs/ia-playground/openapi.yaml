@@ -1,0 +1,253 @@
+openapi: 3.1.0
+info:
+  title: API AI Playground
+  version: '1.0.0'
+servers:
+  - url: /api
+paths:
+  /auth/signup:
+    post:
+      summary: Inscription et envoi d'OTP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignupRequest'
+      responses:
+        '200':
+          description: Inscription créée
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+        '400':
+          $ref: '#/components/responses/ValidationError'
+  /auth/verify-otp:
+    post:
+      summary: Vérification du code OTP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyOtpRequest'
+      responses:
+        '200':
+          description: OTP valide
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  sid:
+                    type: string
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '423':
+          description: Session verrouillée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/session:
+    get:
+      summary: Statut de la session
+      responses:
+        '200':
+          description: État courant
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+  /ia/ideas:
+    post:
+      summary: Génération de trois idées
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdeaRequest'
+      responses:
+        '200':
+          description: Idées générées
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdeaResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+  /ia/final:
+    post:
+      summary: Génération du contenu final
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FinalRequest'
+      responses:
+        '200':
+          description: Contenu final généré
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FinalResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sid
+  schemas:
+    SignupRequest:
+      type: object
+      required: [name, email, sector, goal, consent]
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        company:
+          type: string
+        sector:
+          type: string
+        goal:
+          type: string
+        consent:
+          type: boolean
+    VerifyOtpRequest:
+      type: object
+      required: [email, code]
+      properties:
+        email:
+          type: string
+          format: email
+        code:
+          type: string
+    Session:
+      type: object
+      properties:
+        verified:
+          type: boolean
+        remainingGenerations:
+          type: integer
+    IdeaRequest:
+      type: object
+      required: [platform, brief]
+      properties:
+        platform:
+          type: string
+          enum: [linkedin, instagram, tiktok, twitter, facebook, image]
+        brief:
+          type: string
+        sector:
+          type: string
+        goal:
+          type: string
+    IdeaItem:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        angle:
+          type: string
+        value:
+          type: string
+        cta:
+          type: string
+    IdeaResponse:
+      type: object
+      properties:
+        ideas:
+          type: array
+          items:
+            $ref: '#/components/schemas/IdeaItem'
+    FinalRequest:
+      type: object
+      required: [platform, choice, brief]
+      properties:
+        platform:
+          type: string
+          enum: [linkedin, instagram, tiktok, twitter, facebook, image]
+        choice:
+          type: string
+        brief:
+          type: string
+        sector:
+          type: string
+        goal:
+          type: string
+        tone:
+          type: string
+        cta:
+          type: string
+    FinalResponse:
+      type: object
+      properties:
+        content:
+          type: string
+        hashtags:
+          type: array
+          items:
+            type: string
+        caption:
+          type: string
+        image:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+            prompt:
+              type: string
+            ratio:
+              type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+  responses:
+    ValidationError:
+      description: Erreur de validation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Non authentifié
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimit:
+      description: Limite atteinte
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

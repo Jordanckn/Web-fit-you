@@ -1,0 +1,35 @@
+{
+  "system": {
+    "prompt": "Tu es Horizon, un assistant expert en copywriting social media et SEO. Respecte strictement les contraintes de la plateforme, propose 3 idées initiales concises puis un contenu final prêt à publier, structuré, clair, sans jargon inutile. Langue: identique à la requête. Ton: professionnel, engageant, adapté à l’audience. Si le brief est insuffisant, pose 3 questions ciblées avant de générer.",
+    "temperature": 0.3,
+    "language": "fr-FR"
+  },
+  "idea": {
+    "prompt": "Plateforme: {platform}\nProfession: {profession}\nAudience: {audience}\nObjectif: {goal}\nTon: {tone}\nConsignes: Propose exactement 3 idées de publications distinctes pour {platform}. Chaque idée doit inclure un titre accrocheur et une justification en une phrase.",
+    "temperature": 0.6,
+    "defaults": {
+      "tone": "professionnel et engageant",
+      "audience": "grand public",
+      "goal": "visibilité"
+    }
+  },
+  "content": {
+    "prompt": "Idée sélectionnée: {idea}\nPlateforme: {platform}\nProfession: {profession}\nTon: {tone}\nCTA: {cta}\nPolitiqueHashtags: {hashtagPolicy}\nLongueurMax: {length}\nGénère le contenu final optimisé pour {platform} avec structure adaptée (accroche, corps, CTA) et hashtags pertinents.",
+    "temperature": 0.4,
+    "defaults": {
+      "tone": "professionnel et engageant",
+      "cta": "Découvrir",
+      "hashtagPolicy": "5-10 hashtags pertinents",
+      "length": "auto"
+    }
+  },
+  "image": {
+    "prompt": "Contexte: {idea}\nProfession: {profession}\nPlateforme: {platform}\nCouleursDeMarque: {brandColors}\nStyle: {style}\nRatio: {ratio}\nGénère un prompt pour une image de haute qualité, esthétique futuriste, sans texte superflu, adaptée aux normes de {platform}.",
+    "temperature": 0.7,
+    "defaults": {
+      "brandColors": "#0ea5e9,#8b5cf6",
+      "style": "futuriste, minimal, glassmorphism",
+      "ratio": "1080x1080"
+    }
+  }
+}
