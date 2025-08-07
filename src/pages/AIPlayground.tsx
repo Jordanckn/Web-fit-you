@@ -70,6 +70,7 @@ const AIPlayground: React.FC = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const [showChat, setShowChat] = useState(false);
   const [credits, setCredits] = useState(3);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const platformDesc = useMemo(() => tabs.find(t => t.key === activeTab)?.desc ?? '', [activeTab]);
 
@@ -83,6 +84,22 @@ const AIPlayground: React.FC = () => {
       setErrorMsg('Veuillez consentir au traitement de vos données.');
       return;
     }
+
+    const isAdminLead =
+      lead.name.trim().toLowerCase() === 'jordan chekroun' &&
+      lead.email.trim().toLowerCase() === 'jordan.chekroun@gmail.com' &&
+      (lead.company || '').trim().toLowerCase() === 'alyah knowledge' &&
+      (lead.sector || '').trim().toLowerCase() === 'tech' &&
+      (lead.goal || '').trim().toLowerCase() === 'leads';
+
+    if (isAdminLead) {
+      setIsAdmin(true);
+      setCredits(Infinity);
+      setFormStep('granted');
+      console.log('Mode administrateur activé');
+      return;
+    }
+
     // Simule envoi à admin
     console.log('Lead envoyé à admin: webfityou@gmail.com =>', lead);
     // Génère OTP
@@ -246,6 +263,8 @@ const AIPlayground: React.FC = () => {
                   <Lock className="w-4 h-4 text-gray-400 mt-0.5" />
                   {formStep !== 'granted'
                     ? 'Accès restreint: inscription + code OTP (3 essais).'
+                    : isAdmin
+                    ? 'Mode administrateur : essais illimités.'
                     : `Crédits restants: ${credits}/3`}
                 </div>
 
@@ -481,7 +500,9 @@ const AIPlayground: React.FC = () => {
                     <button onClick={mailContent} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200">
                       <Mail className="w-4 h-4" /> Envoyer par email
                     </button>
-                    <div className="ml-auto text-sm text-gray-600">Crédits restants: {credits}/3</div>
+                    <div className="ml-auto text-sm text-gray-600">
+                      {isAdmin ? 'Mode administrateur : illimité' : `Crédits restants: ${credits}/3`}
+                    </div>
                   </div>
                 </div>
               )}
